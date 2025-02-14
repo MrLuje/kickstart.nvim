@@ -901,7 +901,7 @@ require('lazy').setup({
 
   {
     'hrsh7th/cmp-cmdline',
-    event = 'InsertEnter',
+    event = 'VimEnter',
     config = function()
       local cmp = require 'cmp'
       local config = cmp.get_config()
@@ -930,7 +930,7 @@ require('lazy').setup({
 
   {
     'dmitmel/cmp-cmdline-history',
-    event = 'InsertEnter',
+    event = 'VimEnter',
     config = function()
       local cmp = require 'cmp'
       local config = cmp.get_config()
