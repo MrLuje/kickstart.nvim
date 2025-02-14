@@ -18,6 +18,7 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['<M-g>'] = '<Cmd>DiffviewOpen<CR>',
         },
       },
     },
