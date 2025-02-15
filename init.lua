@@ -201,7 +201,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<C-t>', '<C-v>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-t>', '<C-v>', { noremap = true, silent = true, desc = '[v]isual-block' })
+vim.keymap.set('n', '<M-v>', '<C-v>', { noremap = true, silent = true, desc = '[v]isual-block' })
 
 -- Neo git
 vim.keymap.set('n', '<leader>go', function()
