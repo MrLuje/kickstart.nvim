@@ -168,6 +168,13 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+vim.keymap.set('n', '<leader>gfb', function()
+  vim.cmd.DiffviewFileHistory(vim.api.nvim_buf_get_name(0))
+end, { desc = 'diffview [g]it [f]ile history (current [b]uffer)' })
+vim.keymap.set('n', '<leader>gfc', vim.cmd.DiffviewFileHistory, { desc = 'diffview [g]it [f]ile history ([c]wd)' })
+vim.keymap.set('n', '<leader>gd', vim.cmd.DiffviewOpen, { desc = '[g]it [d]iffview open' })
+vim.keymap.set('n', '<leader>gft', vim.cmd.DiffviewToggleFiles, { desc = '[g]it [d]iffview [f]iles [t]oggle' })
+
 vim.keymap.set('n', '<space>tn', vim.cmd.tabnew, { desc = '[t]ab: [n]ew' })
 vim.keymap.set('n', '<space>tq', vim.cmd.tabclose, { desc = '[t]ab: [q]uit/close' })
 
