@@ -204,6 +204,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<C-t>', '<C-v>', { noremap = true, silent = true, desc = '[v]isual-block' })
 vim.keymap.set('n', '<M-v>', '<C-v>', { noremap = true, silent = true, desc = '[v]isual-block' })
 
+-- Resize window with Ctrl + arrow keys
+vim.keymap.set('n', '<M-Up>', '<cmd>resize +4<CR>', { noremap = true, silent = true, desc = 'Increase window height' })
+vim.keymap.set('n', '<M-Down>', '<cmd>resize -4<CR>', { noremap = true, silent = true, desc = 'Decrease window height' })
+vim.keymap.set('n', '<M-Left>', '<cmd>vertical resize +4<CR>', { noremap = true, silent = true, desc = 'Increase window width' })
+vim.keymap.set('n', '<M-Right>', '<cmd>vertical resize -4<CR>', { noremap = true, silent = true, desc = 'Decrease window height' })
+
 -- Neo git
 vim.keymap.set('n', '<leader>go', function()
   require('neogit').open {}
