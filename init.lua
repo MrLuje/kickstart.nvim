@@ -193,6 +193,18 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<C-t>', '<C-v>', { noremap = true, silent = true })
 
+-- Neo git
+vim.keymap.set('n', '<leader>go', function()
+  require('neogit').open {}
+end, { noremap = true, silent = true, desc = 'neo[g]it [o]pen' })
+
+vim.keymap.set('n', '<leader>gs', function()
+  require('neogit').open { kind = 'auto' }
+end, { noremap = true, silent = true, desc = 'neo[g]it open [s]plit' })
+-- vim.keymap.set('n', '<leader>gc', function()
+--   require('neogit').open { 'commit' }
+-- end, { noremap = true, silent = true, desc = 'neo[g]it [c]ommit' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -1041,6 +1053,7 @@ require('lazy').setup({
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neogit',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'kickstart.plugins.diffview',
 
