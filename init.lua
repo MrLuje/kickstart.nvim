@@ -175,8 +175,14 @@ vim.keymap.set('n', '<leader>gfc', vim.cmd.DiffviewFileHistory, { desc = 'diffvi
 vim.keymap.set('n', '<leader>gd', vim.cmd.DiffviewOpen, { desc = '[g]it [d]iffview open' })
 vim.keymap.set('n', '<leader>gft', vim.cmd.DiffviewToggleFiles, { desc = '[g]it [d]iffview [f]iles [t]oggle' })
 
-vim.keymap.set('n', '<space>tn', vim.cmd.tabnew, { desc = '[t]ab: [n]ew' })
-vim.keymap.set('n', '<space>tq', vim.cmd.tabclose, { desc = '[t]ab: [q]uit/close' })
+vim.keymap.set('n', '<C-t>n', vim.cmd.tabnew, { desc = '[t]ab: [n]ew' })
+vim.keymap.set('n', '<C-t>q', vim.cmd.tabclose, { desc = '[t]ab: [q]uit/close' })
+vim.keymap.set('n', '<C-t>h', vim.cmd.tabprev, { desc = '[t]ab prev' })
+vim.keymap.set('n', '<C-t>l', vim.cmd.tabnext, { desc = '[t]ab next' })
+
+-- vim.keymap.set('n', '<space>tn', vim.cmd.tabnew, { desc = '[t]ab: [n]ew' })
+-- vim.keymap.set('n', '<space>tq', vim.cmd.tabclose, { desc = '[t]ab: [q]uit/close' })
+-- vim.keymap.set('n', '<space>tq', vim.cmd.tabclose, { desc = '[t]ab: [q]uit/close' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -201,7 +207,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<C-t>', '<C-v>', { noremap = true, silent = true, desc = '[v]isual-block' })
 vim.keymap.set('n', '<M-v>', '<C-v>', { noremap = true, silent = true, desc = '[v]isual-block' })
 
 -- Resize window with Ctrl + arrow keys
@@ -349,12 +354,13 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
+        { '<C-t>', group = 'tab', mode = { 'n' } },
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle & [T]abs' },
+        { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
