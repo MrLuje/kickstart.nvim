@@ -870,9 +870,9 @@ require('lazy').setup({
       -- See `:help cmp`
       local cmp = require 'cmp'
 
-      -- Load my snippets
+      -- Load my own snippets
       require('luasnip.loaders.from_vscode').lazy_load {
-        paths = { '/home/vince/.config/nvim/lua' },
+        paths = { './lua' },
       }
 
       local luasnip = require 'luasnip'
