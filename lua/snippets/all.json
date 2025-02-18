@@ -1,0 +1,29 @@
+{
+	"justfile": {
+		"prefix": "just",
+		"body": [
+			"set shell := [\"zsh\", \"-c\"]",
+			"",
+			"[private]",
+			"default:",
+			"\t@just --choose",
+			"",
+			"clean-package *version=\"0.6.7\":",
+			"\tyes | jfrog rt del libs-releases-local/fr/harvest/geocoding/test-geocoding-api-contract/{{version}}",
+			"\tyes | jfrog rt del libs-releases-local/fr/harvest/geocoding/test-geocoding-broker-contract/{{version}}",
+			"",
+			"clean:",
+			"\tsudo find . -name \"build\" -type d -exec rm -R -f {} \\;",
+			"",
+			"produce-test-packages *version=\"0.6.7\": (clean-package version)",
+			"\t./gradlew publish -x test"
+		],
+		"description": "Log output to console"
+	},
+	"shebang": {
+		"prefix": "shebang",
+		"body": [
+			"#!/usr/bin/env bash"
+		]
+	}
+}
